@@ -1,0 +1,89 @@
+/* src/styles/Navbar.css */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 50px;
+    background-color: #343A40;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    margin: 0;
+  }
+  
+  .nav-link-item {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .nav-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #343A40;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  
+  .menu.open {
+    transform: translateX(0);
+  }
+  
+  .menu-item {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #fff;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    /* Hide the navbar links on mobile and tablet */
+    .navbar .nav-links {
+      display: none;
+    }
+  
+    /* Display the hamburger icon on mobile and tablet */
+    .hamburger {
+      display: block;
+    }
+  }
+  
