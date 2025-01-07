@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import NavbarBanner from '../images/NavbarBanner.jpg';
+import NavbarBanner01 from '../images/NavbarImage01.jpg';
 import WhyLearn from './WhyLearn';
 import FlexibleLearning from './FlexibleLearning';
 import ReviewCard from '../components/reviewCard/ReviewCard';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const isMobile = useReducer();
     const navigate = useNavigate();
-const handleRegisterClick = () => {
-    navigate('/registeration');
-    };
+    const handleRegisterClick = () => {
+      navigate('/registeration');
+      };
+      const handleLearnMore = () => {
+        navigate('/learnMore');
+        };
+          
   const heroSectionStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     height: '600px',
-    backgroundImage: `url(${NavbarBanner})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(${NavbarBanner01})`,
     backgroundSize: 'cover',
     color: '#fff',
     textAlign: 'center',
@@ -46,7 +52,9 @@ const handleRegisterClick = () => {
     borderRadius:'5px',
     padding:'20px',
     height:'70px',
-    marginTop: '20px'
+    position: 'fixed',
+    top: '50px',
+    right: '5px'
   };
 
   const starStyle = {
@@ -57,11 +65,11 @@ const handleRegisterClick = () => {
   return (
     <>
       <div style={heroSectionStyle}>
-        <h1>Passion For Music: Online Music Classes</h1>
-        <p>Discover your musical talents with our expert-led online ukulele and guitar classes. Get started today!</p>
+        <h1>Discover Your Passion for Music</h1>
+        <p>Learn Ukulele and Guitar with Expert Mentors from Anywhere.</p>
         <button style={buttonStyle} onClick={handleRegisterClick}>Register Now</button>
-        <button style={buttonSecondaryStyle}>Learn More</button>
-        <div style={reviewSectionStyle}>
+        <button style={buttonSecondaryStyle} onClick={handleLearnMore}>Learn More</button>
+        {!isMobile && <div style={reviewSectionStyle}>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',
     height: '13px'}}>
             <img 
@@ -79,7 +87,7 @@ const handleRegisterClick = () => {
             <span style={starStyle}>&#9733;</span>
             <span style={starStyle}>&#9733;</span>
         </div>
-        </div>
+        </div>}
       </div>
       <WhyLearn />
       <FlexibleLearning/>

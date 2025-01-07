@@ -1,6 +1,8 @@
 import React from 'react';
+import useResponsive from '../components/customHook/useResponsive';
 
 function WhyLearn() {
+  const isMobile = useResponsive();
   const sectionStyle = {
     backgroundColor: '#F8F9FA',
     padding: '50px 20px',
@@ -14,7 +16,7 @@ function WhyLearn() {
   };
 
   const featuresContainerStyle = {
-    gridTemplateColumns: 'repeat(2, 1fr)',
+    gridTemplateColumns: isMobile? 'repeat(1, 1fr)' : 'repeat(2, 1fr)',
     display: 'grid',
     gap: '20px',
     margin: 'auto',

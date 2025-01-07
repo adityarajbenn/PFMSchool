@@ -4,16 +4,18 @@ import { FaClock, FaVideo, FaMobileAlt } from 'react-icons/fa'; // Using Font Aw
 import { BsCameraVideo } from "react-icons/bs";
 import { FiClock } from "react-icons/fi";
 import sideImage from '../images/musicNotes.jpg'
+import useResponsive from '../components/customHook/useResponsive';
 
 function FlexibleLearning() {
+  const isMobile = useResponsive();
   const sectionStyle = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '50px 20px',
+    padding: isMobile? '':'50px 20px',
     backgroundColor: '#F8F9FA', // Light background color
     color: '#325F7B',
-    width:'60%',
+    width: isMobile? '' : '60%',
     margin: 'auto'
   };
 
@@ -54,7 +56,8 @@ function FlexibleLearning() {
     width:'30%',
     textAlign: 'center',
     height: '610px',
-    marginLeft: '10px' 
+    marginLeft: '10px',
+    display : isMobile ? 'none' : '',
   };
 
   const imageStyle = {
@@ -81,7 +84,7 @@ function FlexibleLearning() {
             <BsCameraVideo style={iconStyle} />
             <div>
               <h3>Interactive Lessons</h3>
-              <p>Engage with instructors and classmates through live and on-demand classes.</p>
+              <p>Engage with instructors through live and on-demand classes.</p>
             </div>
           </div>
           <div style={cardStyle}>

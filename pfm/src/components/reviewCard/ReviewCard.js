@@ -1,6 +1,7 @@
 import React from 'react';
 import './ReviewCard.css'; // Import your stylesheet here
 import { useLocation } from 'react-router-dom';
+import useResponsive from '../customHook/useResponsive';
 
 const ReviewCard = ({ profilePic, name, reviewText, rating }) => {
   // Generate star icons based on the rating
@@ -38,6 +39,7 @@ const ReviewCard = ({ profilePic, name, reviewText, rating }) => {
 };
 
 const ReviewSection = () => {
+  const isMobile = useResponsive();
   const stars = Array(5).fill(0).map((_, i) => (
     <span key={i} className={`star ${i < 5 ? 'filled' : ''}`}>★</span>
   ));
@@ -74,7 +76,7 @@ const ReviewSection = () => {
         <p style={{margin:'0px'}}>Reviews</p>
         <p className="rating-value" style={{margin:'0px'}}>4.9{stars}</p>
       </div>
-      <div className="review-cards" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'10px',margin:'auto',marginTop:'20px'}}>
+      <div className="review-cards" style={{display:'grid',gridTemplateColumns: isMobile? 'repeat(1,1fr)' : 'repeat(3,1fr)',gap:'10px',margin:'auto',marginTop:'20px'}}>
         {reviews.map((review, index) => (
           <ReviewCard
             key={index}
