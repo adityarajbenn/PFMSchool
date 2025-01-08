@@ -150,9 +150,9 @@ const RegisterNow = () => {
   </div>
 )}
         <>
-      {((classFrequency && classType !== 'One Class') || (classType === 'One Class')) && <div style={pricingStyle}>
+      {/* {((classFrequency && classType !== 'One Class') || (classType === 'One Class')) && <div style={pricingStyle}>
         Show the price
-      </div>}
+      </div>} */}
       <h2>Register Now</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
