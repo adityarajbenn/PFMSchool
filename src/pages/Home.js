@@ -6,9 +6,10 @@ import WhyLearn from './WhyLearn';
 import FlexibleLearning from './FlexibleLearning';
 import ReviewCard from '../components/reviewCard/ReviewCard';
 import { useNavigate } from 'react-router-dom';
+import useResponsive from '../components/customHook/useResponsive';
 
 function Home() {
-  const isMobile = useReducer();
+  const isMobile = useResponsive();
     const navigate = useNavigate();
     const handleRegisterClick = () => {
       navigate('/registeration');
