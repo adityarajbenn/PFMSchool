@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 import NavbarBanner from '../images/NavbarBanner.jpg';
 import NavbarBanner01 from '../images/NavbarImage01.jpg';
+import MobileBanner from '../images/bannerMobile.jpg';
 import WhyLearn from './WhyLearn';
 import FlexibleLearning from './FlexibleLearning';
 import ReviewCard from '../components/reviewCard/ReviewCard';
@@ -22,7 +23,7 @@ function Home() {
     alignItems: 'center',
     justifyContent: 'center',
     height: '600px',
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(${NavbarBanner01})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(${isMobile? MobileBanner : NavbarBanner01})`,
     backgroundSize: 'cover',
     color: '#fff',
     textAlign: 'center',

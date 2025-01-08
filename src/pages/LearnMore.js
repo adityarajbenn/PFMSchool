@@ -3,6 +3,8 @@ import '../pagesStyles/LearnMore.css';
 import thirdImage from '../images/childRegister.webp'
 import secondImage from '../images/childLearn.webp'
 import firstImage from '../images/childPractiseAlone.webp'
+import forthImage from '../images/clearningDoubts.jpeg'
+import fifthImage from '../images/childPlayInfront.jpeg'
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const LearnMore = () => {
@@ -38,27 +40,27 @@ const LearnMore = () => {
   const steps = [
     {
       caption: "Step 1: Register on Passion For Music",
-      imgSrc: firstImage, // Replace with the actual path
+      imgSrc: firstImage, 
     },
     {
       caption: "Step 2: One-on-One Practice with a Mentor",
-      imgSrc: secondImage, // Replace with the actual path
+      imgSrc: secondImage, 
     },
     {
       caption: "Step 3: Practice on Your Own",
-      imgSrc: thirdImage, // Replace with the actual path
+      imgSrc: thirdImage, 
     },
     {
-      caption: "Step 4: Perform and Shine in Front of an Audience",
-      imgSrc: firstImage, // Replace with the actual path
+      caption: "Step 4: Clear Your Doubts and Refine Skills",
+      imgSrc: forthImage,
     },
     {
-      caption: "Step 5: Clear Your Doubts and Refine Skills",
-      imgSrc: secondImage, // Replace with an additional image if available
+      caption: "Step 5: Practice More",
+      imgSrc: thirdImage, 
     },
     {
-      caption: "Step 6: Become a Rockstar!",
-      imgSrc: thirdImage, // Replace with a celebratory image
+      caption: "Step 6: Perform and Shine in Front of an Audience",
+      imgSrc: fifthImage,
     },
   ];
 
