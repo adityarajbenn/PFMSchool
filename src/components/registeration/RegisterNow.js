@@ -68,9 +68,9 @@ const RegisterNow = () => {
   };
 
   const sendEmail = async () => {
-    const serviceID = process.env.REACT_APP_USER_ID;
+    const serviceID = process.env.REACT_APP_SERVICE_ID;
     const templateID = process.env.REACT_APP_TEMPLATE_ID;
-    const userId = process.env.REACT_APP_SERVICE_ID;
+    const userId = process.env.REACT_APP_USER_ID;
 
     const templateParams = {
       instrument,
